@@ -55,10 +55,9 @@ public class RunMain {
         hot.setAuthor(sc.nextLine());
         System.out.print("Enter content : ");
         hot.setContent(sc.nextLine());
-        news.add(hot);
-        Caculate X = new Caculate();
         System.out.println(" Enter 3 average rate ");
-        X.InputRateList();
+        hot.InputRateList();
+        news.add(hot);
     }
     private static void Ouput(){
         for (int i = 0 ; i < news.size() ; i++) {

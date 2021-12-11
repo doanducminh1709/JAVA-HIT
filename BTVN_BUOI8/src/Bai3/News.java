@@ -1,8 +1,10 @@
 package Bai3;
 
-import java.util.ArrayList;
+import java.util.Scanner;
 
-public class News extends Caculate implements INews{
+public class News implements INews{
+    static private int RateList[] = new int[3];
+    static Scanner sc = new Scanner(System.in);
     private int id;
     private String title;
     private String publishDate;
@@ -63,10 +65,17 @@ public class News extends Caculate implements INews{
     public float getAverageRate() {
         return averageRate;
     }
-    @Override
-    public float ResultRatelist() {
-        return super.ResultRatelist();
+
+    public void InputRateList(){
+        for(int i = 0 ; i < 3 ; i++){
+            System.out.print(" Rate " + (i+1) +" is :");
+            RateList[i] = sc.nextInt();
+        }
     }
+    public double ResultRatelist(){
+        return (1.0*(RateList[0] + RateList[1] + RateList[2]))/3;
+    }
+
     @Override
     public void Display(){
         System.out.println("Title "+ this.title + "\npublishDate : "+ this.publishDate
